@@ -3,14 +3,14 @@ const clientViewModel = require("./viewModel");
 
 const clients = {};
 
-clients.create = async ({ body }) => {
+clients.create = async (result) => {
   try {
-    if(!body.userId || !body.name || !body.email || !body.totalRuns) {
+    if(!result.clientId || !result.userId || !result.name || !result.email || !result.totalRuns) {
         return Promise.reject(
           new Error({ message: "Incomplete client information" }),
         );
     }
-    const viewModel = clientViewModel.createViewModel(body);
+    const viewModel = clientViewModel.createViewModel(result);
     const newClient = await clientsDbHelper.createClient(viewModel);
     return newClient;
   } catch (err) {

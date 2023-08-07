@@ -3,6 +3,10 @@ const minRuns = require("../configs/configs.clients").min_runs;
 
 const GameSchema = new mongoose.Schema(
   {
+    client_id: {
+      type: String,
+      required: [true, "client_id cannot be null"],
+    },
     connection: {
       type: String,
       requied: [true, "Connection cannot be null"],

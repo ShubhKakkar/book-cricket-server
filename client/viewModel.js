@@ -1,24 +1,27 @@
 const clientViewModel = {};
 
-clientViewModel.createViewModel = (body) => {
+clientViewModel.createViewModel = (result) => {
   const viewModel = {};
-  if(body.connectionId) {
-    viewModel.connectionId = body.connectionId;
+  if (result.clientId) {
+    viewModel.client_id = result.clientId;
   }
-  if (body.userId) {
-    viewModel.userId = body.userId;
+  if(result.connectionId) {
+    viewModel.connectionId = result.connectionId;
   }
-  if(body.name) {
-    viewModel.name = body.name;
+  if (result.userId) {
+    viewModel.userId = result.userId;
   }
-  if(body.email) {
-    viewModel.email = body.email;
+  if(result.name) {
+    viewModel.name = result.name;
   }
-  if(body.profilePhoto) {
-    viewModel.profilePhoto = body.profilePhoto;
+  if(result.email) {
+    viewModel.email = result.email;
   }
-  if(body.totalRuns) {
-    viewModel.totalRuns = body.totalRuns;
+  if(result.profilePhoto) {
+    viewModel.profilePhoto = result.profilePhoto;
+  }
+  if(result.totalRuns) {
+    viewModel.totalRuns = result.totalRuns;
   }
   return viewModel;
 };
