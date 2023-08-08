@@ -27,7 +27,7 @@ app.listen(8081, () => {
 })
 
 // mongoose
-mongoose.connect("mongodb://127.0.0.1:27017/book-cricket").then(() => {
+mongoose.connect("mongodb://127.0.0.1:27017/book_cricket").then(() => {
   console.log("Successfully connected to mongodb database");
 }).catch((err) => {
   console.log(err);

@@ -1,12 +1,13 @@
 const clientViewModel = {};
 
-clientViewModel.createViewModel = (result) => {
+clientViewModel.createViewModel = (result, connection) => {
   const viewModel = {};
+  console.log(result, connection);
+  // if (connection) {
+  //   viewModel.connection = connection;
+  // }
   if (result.clientId) {
     viewModel.client_id = result.clientId;
-  }
-  if(result.connectionId) {
-    viewModel.connectionId = result.connectionId;
   }
   if (result.userId) {
     viewModel.userId = result.userId;

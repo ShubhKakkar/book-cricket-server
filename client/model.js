@@ -1,4 +1,5 @@
 const { default: mongoose } = require("mongoose");
+const { connectionStatus } = require("../configs/configs.clients");
 const minRuns = require("../configs/configs.clients").min_runs;
 
 const GameSchema = new mongoose.Schema(
@@ -7,9 +8,14 @@ const GameSchema = new mongoose.Schema(
       type: String,
       required: [true, "client_id cannot be null"],
     },
-    connection: {
+    // connection: {
+    //   type: JSON,
+    //   requied: [true, "Connection cannot be null"],
+    // },
+    connectionStatus: {
       type: String,
-      requied: [true, "Connection cannot be null"],
+      enums: connectionStatus,
+      default: connectionStatus[0],
     },
     userId: {
       type: String,
