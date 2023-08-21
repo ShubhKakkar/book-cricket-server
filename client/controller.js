@@ -38,4 +38,13 @@ clients.getLivePlayers = async (result) => {
   }
 };
 
+clients.getLivePlayerByClientId = async (client_id) => {
+  try {
+    const player = await clientsDbHelper.findPlayerByClientId(client_id);
+    return player;
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}
+
 module.exports = clients;

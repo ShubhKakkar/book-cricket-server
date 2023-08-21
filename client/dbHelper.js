@@ -70,4 +70,16 @@ clientsDbHelper.allLivePlayers = async (data) => {
   }
 };
 
+clientsDbHelper.findPlayerByClientId = async (client_id) => {
+  try {
+    // const startTime = new Date().getTime();
+    const player = await Client.find({ client_id: client_id });
+    // const endTime = new Date().getTime();
+    // logInfo('tokenValidation', startTime, endTime);
+    return player;
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}
+
 module.exports = clientsDbHelper;
